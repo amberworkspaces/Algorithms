@@ -28,10 +28,19 @@ public class CardBubbleSort implements ISort {
 	}
 	@Override
 	public void sort(Comparable<?>[] a) {
-		// TODO Auto-generated method stub
-
+		for(int i = a.length - 1; i > 0;i--){
+			for(int j = i;j > 0;j--){
+				if(less(a[j],a[j-1])){
+					Comparable<?> t = a[j];
+					a[j] = a[j-1];
+					a[j-1] = t;
+				}
+			}
+		}
 	}
-
+	public void sort(){
+		sort(CardBubbleSort.a);
+	}
 	@Override
 	public void exch(Comparable<?>[] a, int i, int j) {
 		if(i == j)return;
@@ -40,7 +49,7 @@ public class CardBubbleSort implements ISort {
 		a[j] = t;
 	}
 	public void exch(int i,int j){
-		exch(this.a,i,j);
+		exch(CardBubbleSort.a,i,j);
 	}
 	@Override
 	public void show(Comparable<?>[] a) {
