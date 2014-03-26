@@ -1,13 +1,13 @@
 package cn.edu.chapter2.exercises;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 public class CardBubbleSortTest {
 
 	private static CardBubbleSort cbs = null;

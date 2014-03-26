@@ -9,7 +9,14 @@ package cn.edu.chapter2.exercises;
 public class Card implements Comparable<Card> {
 	private CardColor color;
 	private CardNum num;
-
+	
+	public Card(){
+		this(null,null);
+	}
+	public Card(CardColor color,CardNum num){
+		this.color = color;
+		this.num = num;
+	}
 	@Override
 	public int compareTo(Card that) {
 		if (0 != this.getColor().compareTo(that.getColor()))

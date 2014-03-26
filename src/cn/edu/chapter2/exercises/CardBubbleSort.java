@@ -7,21 +7,20 @@ public class CardBubbleSort implements ISort {
 	private static Card[] a;
 	private static final int CARDS_SIZE = 52;
 	public CardBubbleSort(){
+		a = new Card[CARDS_SIZE];
 		initCards();
 		shuffle();
 	}
 	private  void initCards(){
-		a = new Card[CARDS_SIZE];
 		int i = 0;
 			for(CardColor cc: CardColor.values()){
 				for(CardNum cn : CardNum.values()){
-					a[i].setColor(cc);
-					a[i++].setNum(cn);
+					a[i++] = new Card(cc,cn);
 				}
 			}
 	}
 	private  void shuffle(){
-		for(int i = 0;i<a.length;i++){
+		for(int i = 0;i<a.length-1;i++){
 			int rand = (int) (Math.random()*(a.length-(i+1)))+(i+1);
 			exch(a,i,rand);
 		}
@@ -66,7 +65,7 @@ public class CardBubbleSort implements ISort {
 		}
 	}
 	public void show(){
-		show(this.a);
+		show(CardBubbleSort.a);
 	}
 	@Override
 	public boolean less(Comparable<?> x, Comparable<?> y) {
