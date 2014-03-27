@@ -27,8 +27,8 @@ public class CardBubbleSort implements ISort {
 	}
 	@Override
 	public void sort(Comparable<?>[] a) {
-		for(int i = a.length - 1; i > 0;i--){
-			for(int j = i;j > 0;j--){
+		for(int i = 0; i < a.length;i++){
+			for(int j = 1;j < a.length-i;j++){
 				if(less(a[j],a[j-1])){
 					Comparable<?> t = a[j];
 					a[j] = a[j-1];
@@ -56,8 +56,7 @@ public class CardBubbleSort implements ISort {
 		for(Object obj : a){
 			if(obj instanceof Card){
 				Card c = (Card) obj;
-				StdOut.print(c);
-				StdOut.print(" ");
+				StdOut.print(c+" ");
 				if(0 == ++count % CardNum.values().length){
 					StdOut.println();
 				}
@@ -76,5 +75,8 @@ public class CardBubbleSort implements ISort {
 			return true;
 		}
 		return false;
+	}
+	public boolean less(int i,int j){
+		return less(CardBubbleSort.a[i],CardBubbleSort.a[j]);
 	}
 }

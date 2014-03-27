@@ -5,9 +5,13 @@ import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import edu.princeton.cs.introcs.StdOut;
 public class CardBubbleSortTest {
 
 	private static CardBubbleSort cbs = null;
@@ -36,22 +40,35 @@ public class CardBubbleSortTest {
 
 	@Test
 	public void testSort() {
-		fail("Not yet implemented");
+		cbs.show();
+		cbs.sort();
+		StdOut.println("-----------------sorted---------------------");
+		cbs.show();
+		Assert.assertTrue(true);
 	}
 
 	@Test
+	@Ignore
 	public void testExchIntInt() {
-		fail("Not yet implemented");
+		boolean r = cbs.less(0, 1);
+		cbs.exch(0, 1);
+		boolean er = cbs.less(0, 1);
+		Assert.assertNotEquals(r, er);;
 	}
 
 	@Test
+	@Ignore
 	public void testShow() {
 		cbs.show();
+		Assert.assertTrue(true);
 	}
 
 	@Test
+	@Ignore
 	public void testLess() {
-		fail("Not yet implemented");
+		Card x = new Card(CardColor.spade,CardNum.$2);
+		Card y = new Card(CardColor.spade,CardNum.$A);
+		Assert.assertTrue(cbs.less(x, y));
 	}
 
 }
