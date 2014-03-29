@@ -1,7 +1,6 @@
 package cn.edu.chapter2.exercises;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;

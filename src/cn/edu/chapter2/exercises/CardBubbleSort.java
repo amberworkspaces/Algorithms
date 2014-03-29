@@ -25,8 +25,7 @@ public class CardBubbleSort implements ISort {
 			exch(a,i,rand);
 		}
 	}
-	@Override
-	public void sort(Comparable<?>[] a) {
+	private void sort(Comparable<?>[] a) {
 		for(int i = 0; i < a.length;i++){
 			for(int j = 1;j < a.length-i;j++){
 				if(less(a[j],a[j-1])){
@@ -37,21 +36,21 @@ public class CardBubbleSort implements ISort {
 			}
 		}
 	}
+	@Override
 	public void sort(){
 		sort(CardBubbleSort.a);
 	}
-	@Override
-	public void exch(Comparable<?>[] a, int i, int j) {
+	private void exch(Comparable<?>[] a, int i, int j) {
 		if(i == j)return;
 		Comparable<?> t = a[i];
 		a[i] = a[j];
 		a[j] = t;
 	}
+	@Override
 	public void exch(int i,int j){
 		exch(CardBubbleSort.a,i,j);
 	}
-	@Override
-	public void show(Comparable<?>[] a) {
+	private void show(Comparable<?>[] a) {
 		int count = 0;
 		for(Object obj : a){
 			if(obj instanceof Card){
@@ -63,6 +62,7 @@ public class CardBubbleSort implements ISort {
 			}
 		}
 	}
+	@Override
 	public void show(){
 		show(CardBubbleSort.a);
 	}
@@ -76,7 +76,9 @@ public class CardBubbleSort implements ISort {
 		}
 		return false;
 	}
+	
 	public boolean less(int i,int j){
 		return less(CardBubbleSort.a[i],CardBubbleSort.a[j]);
 	}
+	
 }
